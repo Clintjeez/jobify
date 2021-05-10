@@ -1,0 +1,23 @@
+header {
+  background-image: url("../../assets/desktop/bg-pattern-header.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 18rem;
+  width: 100%;
+  padding-top: 6.2rem;
+}
+.logo a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mode {
+  height: 1.6rem;
+}

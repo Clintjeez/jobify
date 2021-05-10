@@ -1,0 +1,10 @@
+.jobs-wrapper {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem 2rem;
+  padding: 10rem 3.2rem 0 3.2rem;
+}

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import Header from "./components/Header/header";
+import Filter from "./components/Filter/filter";
+import Body from "./components/Body/body";
 
 function App() {
+  const [jobs, setJobs] = useState([]);
+
+  const getData = () => {
+    fetch(
+      "https://serene-basin-16003.herokuapp.com/https://jobs.github.com/positions.json"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setJobs(data);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Filter />
+      <Body jobs={jobs} />
     </div>
   );
 }
